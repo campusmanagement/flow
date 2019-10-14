@@ -1,0 +1,44 @@
+{
+  "properties": {
+    "capabilities": [],
+    "connectionParameters": {
+      "token": {
+        "oAuthSettings": {
+          "clientId": "8801a379-fc39-4bff-9209-38302d36f933",
+          "customParameters": {
+            "loginUri": {
+              "value": "https://login.windows.net"
+            },
+            "resourceUri": {
+              "value": "https://sisclientweb-900002.campusnexus.cloud"
+            },
+            "tenantId": {
+              "value": "a38ff870-9c86-43df-9e6b-6b01f206a398"
+            }
+          },
+          "identityProvider": "aad",
+          "properties": {
+            "IsFirstParty": "False"
+          },
+          "redirectMode": "Global",
+          "redirectUrl": "https://global.consent.azure-apim.net/redirect",
+          "scopes": []
+        },
+        "type": "oauthSetting"
+      },
+      "token:TenantId": {
+        "metadata": {
+          "sourceType": "AzureActiveDirectoryTenant"
+        },
+        "type": "string",
+        "uiDefinition": {
+          "constraints": {
+            "hidden": "true",
+            "required": "false"
+          }
+        }
+      }
+    },
+    "iconBrandColor": "#ffffff"
+  }
+}

@@ -1,0 +1,716 @@
+{
+  "basePath": "/",
+  "consumes": [],
+  "definitions": {
+    "AdjustMultipleTransactionsRequest": {
+      "description": "Request to adjust multiple transctions",
+      "properties": {
+        "Transactions": {
+          "description": "List of Transactions",
+          "items": {
+            "$ref": "#/definitions/AdjustTransactionRequest"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "AdjustMultipleTransactionsResponse": {
+      "description": "Adjust Multiple Transactions Response",
+      "properties": {
+        "Items": {
+          "description": "Item Responses",
+          "items": {
+            "$ref": "#/definitions/AdjustMultipleTransactionsResponseItem"
+          },
+          "readOnly": true,
+          "type": "array"
+        },
+        "ValidationMessages": {
+          "items": {
+            "$ref": "#/definitions/ValidationMessage"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "AdjustMultipleTransactionsResponseItem": {
+      "description": "Student Course Registration Response Item",
+      "properties": {
+        "Entity": {
+          "$ref": "#/definitions/StudentAccountTransactionEntity"
+        },
+        "RequestItem": {
+          "$ref": "#/definitions/AdjustTransactionRequest",
+          "description": "The request item"
+        },
+        "ValidationMessages": {
+          "items": {
+            "$ref": "#/definitions/ValidationMessage"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "AdjustSingleTransactionRequest": {
+      "description": "Adjust Transaction Request",
+      "properties": {
+        "AcademicYearPaymentPeriodId": {
+          "description": "Payment Period Id",
+          "format": "int32",
+          "type": "integer"
+        },
+        "AcademicYearSequence": {
+          "description": "Academic Year Sequence",
+          "format": "int32",
+          "type": "integer"
+        },
+        "BillingTransactionCodeId": {
+          "description": "Transaction Code Id",
+          "format": "int32",
+          "type": "integer"
+        },
+        "Description": {
+          "description": "Transaction Description",
+          "type": "string"
+        },
+        "Note": {
+          "description": "Adjustment Note",
+          "type": "string"
+        },
+        "Reference": {
+          "description": "Transaction Reference Code",
+          "type": "string"
+        },
+        "RowVersion": {
+          "description": "Row Version",
+          "format": "byte",
+          "type": "string"
+        },
+        "StudentEnrollmentPeriodId": {
+          "description": "Student Enrollment Period Id",
+          "format": "int32",
+          "type": "integer"
+        },
+        "TermId": {
+          "description": "Term Id",
+          "format": "int32",
+          "type": "integer"
+        },
+        "TransactionAmount": {
+          "description": "Transaction Amount",
+          "format": "double",
+          "type": "number"
+        },
+        "TransactionDate": {
+          "description": "Transaction Date",
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "AdjustTransactionRequest": {
+      "description": "Adjust a transaction request",
+      "properties": {
+        "AcademicYearPaymentPeriodId": {
+          "description": "Payment Period Id",
+          "format": "int32",
+          "type": "integer"
+        },
+        "AcademicYearSequence": {
+          "description": "Academic Year Sequence",
+          "format": "int32",
+          "type": "integer"
+        },
+        "BillingTransactionCodeId": {
+          "description": "Transaction Code Id",
+          "format": "int32",
+          "type": "integer"
+        },
+        "Description": {
+          "description": "Transaction Description",
+          "type": "string"
+        },
+        "Id": {
+          "description": "Transaction Id",
+          "format": "int32",
+          "type": "integer"
+        },
+        "Note": {
+          "description": "Adjustment Note",
+          "type": "string"
+        },
+        "Reference": {
+          "description": "Transaction Reference Code",
+          "type": "string"
+        },
+        "RowVersion": {
+          "description": "Row Version",
+          "format": "byte",
+          "type": "string"
+        },
+        "StudentEnrollmentPeriodId": {
+          "description": "Student Enrollment Period Id",
+          "format": "int32",
+          "type": "integer"
+        },
+        "TermId": {
+          "description": "Term Id",
+          "format": "int32",
+          "type": "integer"
+        },
+        "TransactionAmount": {
+          "description": "Transaction Amount",
+          "format": "double",
+          "type": "number"
+        },
+        "TransactionDate": {
+          "description": "Transaction Date",
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "EntityProperty": {
+      "properties": {
+        "EntityState": {
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "format": "int32",
+          "type": "integer"
+        },
+        "ExtendedProperties": {
+          "items": {
+            "$ref": "#/definitions/EntityProperty"
+          },
+          "type": "array"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "OriginalState": {
+          "format": "byte",
+          "type": "string"
+        },
+        "SecureState": {
+          "format": "byte",
+          "type": "string"
+        },
+        "Value": {
+          "$ref": "#/definitions/Object"
+        }
+      },
+      "type": "object"
+    },
+    "EntityServiceResponse[StudentAccountTransactionEntity]": {
+      "properties": {
+        "Entity": {
+          "$ref": "#/definitions/StudentAccountTransactionEntity"
+        },
+        "ValidationMessages": {
+          "items": {
+            "$ref": "#/definitions/ValidationMessage"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Object": {
+      "properties": {},
+      "type": "object"
+    },
+    "StudentAccountTransactionEntity": {
+      "properties": {
+        "AcademicYearSequence": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "AchBatchFileId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "AdmissionsRepId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "AgencyBranchCreditCardId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "AmountPaid": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "AppliedDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "BankAccountId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "BankDepositId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "BatchNumber": {
+          "type": "string"
+        },
+        "BillingTransactionCode": {
+          "type": "string"
+        },
+        "CampusId": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "CashDrawerSessionId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "CheckClearedDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "CheckNumber": {
+          "type": "string"
+        },
+        "CheckStatus": {
+          "type": "string"
+        },
+        "ClassSectionId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "CourseAmountToRetain": {
+          "format": "double",
+          "type": "number"
+        },
+        "CourseId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "CourseRefundPolicyId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "CreatedByUserId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "CreatedDateTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "CreditCardAuthorizationNumber": {
+          "type": "string"
+        },
+        "CreditCardBatchTransactionId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "CreditCardDeclineCode": {
+          "type": "string"
+        },
+        "DepositId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "DiscountAmount": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "EftClearedDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "EftNumber": {
+          "type": "string"
+        },
+        "EftStatus": {
+          "type": "string"
+        },
+        "EntityState": {
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "format": "int32",
+          "type": "integer"
+        },
+        "ExtendedProperties": {
+          "items": {
+            "$ref": "#/definitions/EntityProperty"
+          },
+          "type": "array"
+        },
+        "Id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsAutomatedProcess": {
+          "type": "boolean"
+        },
+        "IsGeneralLedgerStatusFlag": {
+          "type": "boolean"
+        },
+        "IsInPendingQueue": {
+          "type": "boolean"
+        },
+        "IsManualCheckExtract": {
+          "type": "boolean"
+        },
+        "IsPostedToGeneralLedger": {
+          "type": "boolean"
+        },
+        "IsPreviousYear1098t": {
+          "type": "boolean"
+        },
+        "IsReconciledInCnf": {
+          "type": "boolean"
+        },
+        "IsReissued": {
+          "type": "boolean"
+        },
+        "IsSentBack": {
+          "type": "boolean"
+        },
+        "LastModifiedDateTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "LastModifiedUserId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "MerchantProcessingCode": {
+          "type": "string"
+        },
+        "OriginalState": {
+          "format": "byte",
+          "type": "string"
+        },
+        "OriginalStudentAccountTransactionId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "PaidDisbursementId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "PaymentPeriodId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "PaymentType": {
+          "type": "string"
+        },
+        "PostDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "ReceiptNumber": {
+          "type": "string"
+        },
+        "ReceiptPrintedDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Reference": {
+          "type": "string"
+        },
+        "RefundCalculationId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "RefundId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "RegistrationTermId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "RowVersion": {
+          "format": "byte",
+          "type": "string"
+        },
+        "Sa1098T": {
+          "type": "string"
+        },
+        "SecureState": {
+          "format": "byte",
+          "type": "string"
+        },
+        "Source": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "StudentAcademicYearPaymentPeriodId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "StudentAccountBatchBillingId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "StudentAwardId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "StudentCreditCardId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "StudentEnrollmentPeriodFeeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "StudentEnrollmentPeriodId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "StudentId": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "StudentRevenueDetailId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "SyAddressId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "TermId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "TransactionAmount": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "TransactionDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "TransactionNumber": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "TuitionDiscountPolicyId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "CampusId",
+        "PostDate",
+        "Source",
+        "Status",
+        "StudentId",
+        "TransactionAmount",
+        "TransactionDate",
+        "Type"
+      ],
+      "type": "object"
+    },
+    "ValidationMessage": {
+      "properties": {
+        "Message": {
+          "type": "string"
+        },
+        "MessageType": {
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "host": "sisclientweb-900002.campusnexus.cloud",
+  "info": {
+    "description": "CampusNexus Student v20.0 Query API (Integration-StudentAccounting)",
+    "title": "Integration-StudentAccounting",
+    "version": "integration-studentaccounting"
+  },
+  "parameters": {},
+  "paths": {
+    "/api/student-accounting/ledger-transactions": {
+      "patch": {
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "deprecated": false,
+        "operationId": "StudentAccounting_AdjustTransactions",
+        "parameters": [
+          {
+            "description": "Adjust Transactions Request",
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AdjustMultipleTransactionsRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Student Account Transaction",
+            "schema": {
+              "$ref": "#/definitions/AdjustMultipleTransactionsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Failed Authorization"
+          }
+        },
+        "summary": "Adjust multiple student ledger transactions",
+        "tags": [
+          "StudentAccounting"
+        ]
+      }
+    },
+    "/api/student-accounting/ledger-transactions/{id}": {
+      "get": {
+        "consumes": [],
+        "deprecated": false,
+        "operationId": "StudentAccounting_GetLedgerTransactionById",
+        "parameters": [
+          {
+            "description": "Transaction Id",
+            "format": "int32",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Student Account Transaction",
+            "schema": {
+              "$ref": "#/definitions/EntityServiceResponse[StudentAccountTransactionEntity]"
+            }
+          },
+          "403": {
+            "description": "Failed Authorization"
+          }
+        },
+        "summary": "Get a ledger transaction",
+        "tags": [
+          "StudentAccounting"
+        ]
+      },
+      "patch": {
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "deprecated": false,
+        "operationId": "StudentAccounting_AdjustTransactionById",
+        "parameters": [
+          {
+            "description": "Transaction Id",
+            "format": "int32",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Adjust Transaction Request",
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AdjustSingleTransactionRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Student Account Transaction",
+            "schema": {
+              "$ref": "#/definitions/EntityServiceResponse[StudentAccountTransactionEntity]"
+            }
+          },
+          "403": {
+            "description": "Failed Authorization"
+          }
+        },
+        "summary": "Adjust a student ledger transaction",
+        "tags": [
+          "StudentAccounting"
+        ]
+      }
+    }
+  },
+  "produces": [],
+  "responses": {},
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "security": [
+    {
+      "oauth2_auth": []
+    }
+  ],
+  "securityDefinitions": {
+    "oauth2_auth": {
+      "authorizationUrl": "https://login.windows.net/common/oauth2/authorize",
+      "flow": "accessCode",
+      "scopes": {},
+      "tokenUrl": "https://login.windows.net/common/oauth2/authorize",
+      "type": "oauth2"
+    }
+  },
+  "swagger": "2.0",
+  "tags": []
+}
