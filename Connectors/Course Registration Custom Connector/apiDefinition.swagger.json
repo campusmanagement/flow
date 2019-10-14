@@ -1,0 +1,2665 @@
+{
+  "basePath": "/",
+  "consumes": [],
+  "definitions": {
+    "ApplyClause": {
+      "properties": {
+        "Transformations": {
+          "items": {
+            "$ref": "#/definitions/TransformationNode"
+          },
+          "readOnly": true,
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ApplyQueryOption": {
+      "properties": {
+        "ApplyClause": {
+          "$ref": "#/definitions/ApplyClause",
+          "readOnly": true
+        },
+        "Context": {
+          "$ref": "#/definitions/ODataQueryContext",
+          "readOnly": true
+        },
+        "RawValue": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "ResultClrType": {
+          "readOnly": true,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ClassSectionCustomMeetingPatternEntity": {
+      "properties": {
+        "CreatedDateTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "EndTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "EntityState": {
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "format": "int32",
+          "type": "integer"
+        },
+        "ExtendedProperties": {
+          "items": {
+            "$ref": "#/definitions/EntityProperty"
+          },
+          "type": "array"
+        },
+        "Frequency": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsMeetingOnFriday": {
+          "type": "boolean"
+        },
+        "IsMeetingOnMonday": {
+          "type": "boolean"
+        },
+        "IsMeetingOnSaturday": {
+          "type": "boolean"
+        },
+        "IsMeetingOnSunday": {
+          "type": "boolean"
+        },
+        "IsMeetingOnThursday": {
+          "type": "boolean"
+        },
+        "IsMeetingOnTuesday": {
+          "type": "boolean"
+        },
+        "IsMeetingOnWednesday": {
+          "type": "boolean"
+        },
+        "IsRecurrenceEnding": {
+          "type": "boolean"
+        },
+        "LastModifiedDateTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "LastModifiedUserId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "MeetingLength": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "OriginalState": {
+          "format": "byte",
+          "type": "string"
+        },
+        "PatternType": {
+          "type": "string"
+        },
+        "RecurrenceEndNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "RecurrenceStartWeeks": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "RowVersion": {
+          "format": "byte",
+          "type": "string"
+        },
+        "SecureState": {
+          "format": "byte",
+          "type": "string"
+        },
+        "StartTime": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Id"
+      ],
+      "type": "object"
+    },
+    "ClassSectionEntity": {
+      "properties": {
+        "AddDropDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "AddedClassSectionId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "AllowCreditsHoursOverride": {
+          "type": "boolean"
+        },
+        "AllowReservations": {
+          "type": "boolean"
+        },
+        "AttendanceLastPostedDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "AutoDropConsecutiveHoursAbsent": {
+          "format": "double",
+          "type": "number"
+        },
+        "AutoDropCumulativeHoursAbsent": {
+          "format": "double",
+          "type": "number"
+        },
+        "AutoDropPercentageHoursAbsent": {
+          "format": "double",
+          "type": "number"
+        },
+        "AutoWarningConsecutiveHoursAbsent": {
+          "format": "double",
+          "type": "number"
+        },
+        "AutoWarningCumulativeHoursAbsent": {
+          "format": "double",
+          "type": "number"
+        },
+        "AutoWarningPercentageHoursAbsent": {
+          "format": "double",
+          "type": "number"
+        },
+        "CampusId": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "CantDeleteTerms": {
+          "type": "string"
+        },
+        "ClassSchedLength": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ClockHours": {
+          "format": "double",
+          "type": "number"
+        },
+        "CourseCode": {
+          "type": "string"
+        },
+        "CourseId": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "CreatedDateTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "CreditHours": {
+          "format": "double",
+          "type": "number"
+        },
+        "CrsgCrossReferenceCampuses": {
+          "items": {
+            "$ref": "#/definitions/CrsgCrossReferenceCampus"
+          },
+          "type": "array"
+        },
+        "DaysFlag": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "DeliveryMethodId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "EndDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "EnrollmentStatusClockHours": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "EnrollmentStatusCreditHours": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "EntityState": {
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "format": "int32",
+          "type": "integer"
+        },
+        "ExtendedProperties": {
+          "items": {
+            "$ref": "#/definitions/EntityProperty"
+          },
+          "type": "array"
+        },
+        "FinalCountDropStudents": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "FinalCountRegisteredStudents": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "HideFaculty": {
+          "type": "boolean"
+        },
+        "HideLocation": {
+          "type": "boolean"
+        },
+        "Id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "InstructorId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsActive": {
+          "type": "boolean"
+        },
+        "IsAddDropDateOverride": {
+          "type": "boolean"
+        },
+        "IsAuditAdvisementRequired": {
+          "type": "boolean"
+        },
+        "IsAutoDropEnforcedAfterLdw": {
+          "type": "boolean"
+        },
+        "IsAutoWarningOnClassRosterAfterLdw": {
+          "type": "boolean"
+        },
+        "IsBlindGrading": {
+          "type": "boolean"
+        },
+        "IsClassSectionAutoAdded": {
+          "type": "boolean"
+        },
+        "IsContactHoursConfirmed": {
+          "type": "boolean"
+        },
+        "IsLdwOverride": {
+          "type": "boolean"
+        },
+        "IsMeetingOnIrregularDaysTimes": {
+          "type": "boolean"
+        },
+        "IsRequireLDAConfirmed": {
+          "type": "boolean"
+        },
+        "IsSchedulePeriodDeleteConfirmation": {
+          "type": "boolean"
+        },
+        "IsStudentSpecificMeetingSchedule": {
+          "type": "boolean"
+        },
+        "IsUpdateStudentSchedules": {
+          "type": "boolean"
+        },
+        "IsUpdateStudentSchedulesConfirmation": {
+          "type": "boolean"
+        },
+        "IsUpdateStudentSchedulesConfirmationProvided": {
+          "type": "boolean"
+        },
+        "IsWaitListingAllowed": {
+          "type": "boolean"
+        },
+        "IsWaitlistExpiredOrCleared": {
+          "type": "boolean"
+        },
+        "LastDayToWithdrawDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "LastModifiedDateTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "LastModifiedUserId": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "LmsExtractStatus": {
+          "type": "string"
+        },
+        "LmsVendorId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "MakeUpMaxType": {
+          "type": "string"
+        },
+        "MakeUpMaxValue": {
+          "format": "double",
+          "type": "number"
+        },
+        "MaxNumberAssignments": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "MaxNumberSectionsAllowed": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "MaximumCredits": {
+          "format": "double",
+          "type": "number"
+        },
+        "MaximumStudents": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "MeetingPatterns": {
+          "items": {
+            "$ref": "#/definitions/ClassSectionMeetingPatternEntity"
+          },
+          "type": "array"
+        },
+        "MinimumCredits": {
+          "format": "double",
+          "type": "number"
+        },
+        "NextAttendanceDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Note": {
+          "type": "string"
+        },
+        "NumberRegisteredStudents": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "OriginalState": {
+          "format": "byte",
+          "type": "string"
+        },
+        "PassFailSetting": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "PostAttendanceType": {
+          "type": "string"
+        },
+        "RequireContactHoursConfirmation": {
+          "type": "boolean"
+        },
+        "RequireLDAConfirmation": {
+          "type": "boolean"
+        },
+        "RowVersion": {
+          "format": "byte",
+          "type": "string"
+        },
+        "ScheduleEndDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "ScheduleStartDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "SectionCode": {
+          "type": "string"
+        },
+        "SectionName": {
+          "type": "string"
+        },
+        "SecureState": {
+          "format": "byte",
+          "type": "string"
+        },
+        "SendToLms": {
+          "type": "boolean"
+        },
+        "ShiftId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "StartDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "StartTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "StudentSpecificMeetingScheduleDefaultMinutes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "SyllabusDocument": {
+          "type": "string"
+        },
+        "Terms": {
+          "items": {
+            "$ref": "#/definitions/ClassSectionTermEntity"
+          },
+          "type": "array"
+        },
+        "ThresholdNumberOfSeats": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ThresholdType": {
+          "type": "boolean"
+        },
+        "UpdateStudentsInCourseSection": {
+          "type": "boolean"
+        },
+        "WaitListMaximumSeats": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "WlmActivityTypeId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Id",
+        "CampusId",
+        "CourseId",
+        "CreatedDateTime",
+        "LastModifiedDateTime",
+        "LastModifiedUserId"
+      ],
+      "type": "object"
+    },
+    "ClassSectionMeetingPatternDayRoom": {
+      "properties": {
+        "BuildingCode": {
+          "type": "string"
+        },
+        "BuildingId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "BuildingName": {
+          "type": "string"
+        },
+        "DayOfWeek": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "RoomCode": {
+          "type": "string"
+        },
+        "RoomId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "RoomName": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ClassSectionMeetingPatternEntity": {
+      "properties": {
+        "ClassSectionId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "CreatedDateTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "DayOfWeekRooms": {
+          "items": {
+            "$ref": "#/definitions/ClassSectionMeetingPatternDayRoom"
+          },
+          "type": "array"
+        },
+        "EntityState": {
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "format": "int32",
+          "type": "integer"
+        },
+        "ExtendedProperties": {
+          "items": {
+            "$ref": "#/definitions/EntityProperty"
+          },
+          "type": "array"
+        },
+        "Id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsConflict": {
+          "type": "boolean"
+        },
+        "LastModifiedDateTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "LastModifiedUserId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "MeetingPattern": {
+          "$ref": "#/definitions/ClassSectionCustomMeetingPatternEntity"
+        },
+        "MeetingPatternId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "OriginalState": {
+          "format": "byte",
+          "type": "string"
+        },
+        "RowVersion": {
+          "format": "byte",
+          "type": "string"
+        },
+        "SecureState": {
+          "format": "byte",
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Id"
+      ],
+      "type": "object"
+    },
+    "ClassSectionTermEntity": {
+      "properties": {
+        "ClassSectionId": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "CreatedDateTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "EntityState": {
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "format": "int32",
+          "type": "integer"
+        },
+        "ExtendedProperties": {
+          "items": {
+            "$ref": "#/definitions/EntityProperty"
+          },
+          "type": "array"
+        },
+        "Id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "LastModifiedDateTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "LastModifiedUserId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "OriginalState": {
+          "format": "byte",
+          "type": "string"
+        },
+        "RowVersion": {
+          "format": "byte",
+          "type": "string"
+        },
+        "SecureState": {
+          "format": "byte",
+          "type": "string"
+        },
+        "TermId": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "TermName": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ClassSectionId",
+        "TermId"
+      ],
+      "type": "object"
+    },
+    "CountQueryOption": {
+      "properties": {
+        "Context": {
+          "$ref": "#/definitions/ODataQueryContext",
+          "readOnly": true
+        },
+        "RawValue": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Validator": {
+          "$ref": "#/definitions/CountQueryValidator"
+        },
+        "Value": {
+          "readOnly": true,
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "CountQueryValidator": {
+      "properties": {},
+      "type": "object"
+    },
+    "CrsgCrossReferenceCampus": {
+      "properties": {
+        "Id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsCRSG": {
+          "type": "boolean"
+        },
+        "Name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "EdmReferentialConstraintPropertyPair": {
+      "properties": {
+        "DependentProperty": {
+          "$ref": "#/definitions/IEdmStructuralProperty",
+          "readOnly": true
+        },
+        "PrincipalProperty": {
+          "$ref": "#/definitions/IEdmStructuralProperty",
+          "readOnly": true
+        }
+      },
+      "type": "object"
+    },
+    "EntityProperty": {
+      "properties": {
+        "EntityState": {
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "format": "int32",
+          "type": "integer"
+        },
+        "ExtendedProperties": {
+          "items": {
+            "$ref": "#/definitions/EntityProperty"
+          },
+          "type": "array"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "OriginalState": {
+          "format": "byte",
+          "type": "string"
+        },
+        "SecureState": {
+          "format": "byte",
+          "type": "string"
+        },
+        "Value": {
+          "$ref": "#/definitions/Object"
+        }
+      },
+      "type": "object"
+    },
+    "EntityServiceResponse[ClassSectionEntity]": {
+      "properties": {
+        "Entity": {
+          "$ref": "#/definitions/ClassSectionEntity"
+        },
+        "ValidationMessages": {
+          "items": {
+            "$ref": "#/definitions/ValidationMessage"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "EntityServiceResponse[StudentCourseEntity]": {
+      "properties": {
+        "Entity": {
+          "$ref": "#/definitions/StudentCourseEntity"
+        },
+        "ValidationMessages": {
+          "items": {
+            "$ref": "#/definitions/ValidationMessage"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "FilterClause": {
+      "properties": {
+        "Expression": {
+          "$ref": "#/definitions/SingleValueNode",
+          "readOnly": true
+        },
+        "ItemType": {
+          "$ref": "#/definitions/IEdmTypeReference",
+          "readOnly": true
+        },
+        "RangeVariable": {
+          "$ref": "#/definitions/RangeVariable",
+          "readOnly": true
+        }
+      },
+      "type": "object"
+    },
+    "FilterQueryOption": {
+      "properties": {
+        "Context": {
+          "$ref": "#/definitions/ODataQueryContext",
+          "readOnly": true
+        },
+        "FilterClause": {
+          "$ref": "#/definitions/FilterClause",
+          "readOnly": true
+        },
+        "RawValue": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Validator": {
+          "$ref": "#/definitions/FilterQueryValidator"
+        }
+      },
+      "type": "object"
+    },
+    "FilterQueryValidator": {
+      "properties": {},
+      "type": "object"
+    },
+    "GetAvailableSeatsResponse": {
+      "properties": {
+        "ClassSectionId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsSeatAvailable": {
+          "type": "boolean"
+        },
+        "IsWaitListEnabled": {
+          "type": "boolean"
+        },
+        "MaxSeats": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ValidationMessages": {
+          "items": {
+            "$ref": "#/definitions/ValidationMessage"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "GetCoursesForEnrollmentResponse": {
+      "description": "Courses for Enrollment",
+      "properties": {
+        "Items": {
+          "description": "Student Course Items",
+          "items": {
+            "$ref": "#/definitions/EntityServiceResponse[StudentCourseEntity]"
+          },
+          "type": "array"
+        },
+        "ValidationMessages": {
+          "items": {
+            "$ref": "#/definitions/ValidationMessage"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "IEdmDirectValueAnnotationsManager": {
+      "properties": {},
+      "type": "object"
+    },
+    "IEdmEntityContainer": {
+      "properties": {
+        "Elements": {
+          "items": {
+            "$ref": "#/definitions/IEdmEntityContainerElement"
+          },
+          "readOnly": true,
+          "type": "array"
+        },
+        "Name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Namespace": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "SchemaElementKind": {
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "IEdmEntityContainerElement": {
+      "properties": {
+        "Container": {
+          "$ref": "#/definitions/IEdmEntityContainer",
+          "readOnly": true
+        },
+        "ContainerElementKind": {
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "Name": {
+          "readOnly": true,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "IEdmModel": {
+      "properties": {
+        "DeclaredNamespaces": {
+          "items": {
+            "type": "string"
+          },
+          "readOnly": true,
+          "type": "array"
+        },
+        "DirectValueAnnotationsManager": {
+          "$ref": "#/definitions/IEdmDirectValueAnnotationsManager",
+          "readOnly": true
+        },
+        "EntityContainer": {
+          "$ref": "#/definitions/IEdmEntityContainer",
+          "readOnly": true
+        },
+        "ReferencedModels": {
+          "items": {
+            "$ref": "#/definitions/IEdmModel"
+          },
+          "readOnly": true,
+          "type": "array"
+        },
+        "SchemaElements": {
+          "items": {
+            "$ref": "#/definitions/IEdmSchemaElement"
+          },
+          "readOnly": true,
+          "type": "array"
+        },
+        "VocabularyAnnotations": {
+          "items": {
+            "$ref": "#/definitions/IEdmVocabularyAnnotation"
+          },
+          "readOnly": true,
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "IEdmNavigationProperty": {
+      "properties": {
+        "ContainsTarget": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "DeclaringType": {
+          "$ref": "#/definitions/IEdmStructuredType",
+          "readOnly": true
+        },
+        "Name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "OnDelete": {
+          "enum": [
+            0,
+            1
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "Partner": {
+          "$ref": "#/definitions/IEdmNavigationProperty",
+          "readOnly": true
+        },
+        "PropertyKind": {
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "ReferentialConstraint": {
+          "$ref": "#/definitions/IEdmReferentialConstraint",
+          "readOnly": true
+        },
+        "Type": {
+          "$ref": "#/definitions/IEdmTypeReference",
+          "readOnly": true
+        }
+      },
+      "type": "object"
+    },
+    "IEdmNavigationPropertyBinding": {
+      "properties": {
+        "NavigationProperty": {
+          "$ref": "#/definitions/IEdmNavigationProperty",
+          "readOnly": true
+        },
+        "Target": {
+          "$ref": "#/definitions/IEdmNavigationSource",
+          "readOnly": true
+        }
+      },
+      "type": "object"
+    },
+    "IEdmNavigationSource": {
+      "properties": {
+        "Name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "NavigationPropertyBindings": {
+          "items": {
+            "$ref": "#/definitions/IEdmNavigationPropertyBinding"
+          },
+          "readOnly": true,
+          "type": "array"
+        },
+        "Path": {
+          "$ref": "#/definitions/IEdmPathExpression",
+          "readOnly": true
+        },
+        "Type": {
+          "$ref": "#/definitions/IEdmType",
+          "readOnly": true
+        }
+      },
+      "type": "object"
+    },
+    "IEdmPathExpression": {
+      "properties": {
+        "ExpressionKind": {
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "Path": {
+          "items": {
+            "type": "string"
+          },
+          "readOnly": true,
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "IEdmProperty": {
+      "properties": {
+        "DeclaringType": {
+          "$ref": "#/definitions/IEdmStructuredType",
+          "readOnly": true
+        },
+        "Name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "PropertyKind": {
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "Type": {
+          "$ref": "#/definitions/IEdmTypeReference",
+          "readOnly": true
+        }
+      },
+      "type": "object"
+    },
+    "IEdmReferentialConstraint": {
+      "properties": {
+        "PropertyPairs": {
+          "items": {
+            "$ref": "#/definitions/EdmReferentialConstraintPropertyPair"
+          },
+          "readOnly": true,
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "IEdmSchemaElement": {
+      "properties": {
+        "Name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Namespace": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "SchemaElementKind": {
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "IEdmStructuralProperty": {
+      "properties": {
+        "ConcurrencyMode": {
+          "enum": [
+            0,
+            1
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "DeclaringType": {
+          "$ref": "#/definitions/IEdmStructuredType",
+          "readOnly": true
+        },
+        "DefaultValueString": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "PropertyKind": {
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "Type": {
+          "$ref": "#/definitions/IEdmTypeReference",
+          "readOnly": true
+        }
+      },
+      "type": "object"
+    },
+    "IEdmStructuredType": {
+      "properties": {
+        "BaseType": {
+          "$ref": "#/definitions/IEdmStructuredType",
+          "readOnly": true
+        },
+        "DeclaredProperties": {
+          "items": {
+            "$ref": "#/definitions/IEdmProperty"
+          },
+          "readOnly": true,
+          "type": "array"
+        },
+        "IsAbstract": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "IsOpen": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "TypeKind": {
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "IEdmTerm": {
+      "properties": {
+        "Name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Namespace": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "SchemaElementKind": {
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "TermKind": {
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "IEdmType": {
+      "properties": {
+        "TypeKind": {
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "IEdmTypeReference": {
+      "properties": {
+        "Definition": {
+          "$ref": "#/definitions/IEdmType",
+          "readOnly": true
+        },
+        "IsNullable": {
+          "readOnly": true,
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "IEdmVocabularyAnnotatable": {
+      "properties": {},
+      "type": "object"
+    },
+    "IEdmVocabularyAnnotation": {
+      "properties": {
+        "Qualifier": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Target": {
+          "$ref": "#/definitions/IEdmVocabularyAnnotatable",
+          "readOnly": true
+        },
+        "Term": {
+          "$ref": "#/definitions/IEdmTerm",
+          "readOnly": true
+        }
+      },
+      "type": "object"
+    },
+    "ODataPath": {
+      "properties": {
+        "EdmType": {
+          "$ref": "#/definitions/IEdmType",
+          "readOnly": true
+        },
+        "NavigationSource": {
+          "$ref": "#/definitions/IEdmNavigationSource",
+          "readOnly": true
+        },
+        "PathTemplate": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Segments": {
+          "items": {
+            "$ref": "#/definitions/ODataPathSegment"
+          },
+          "readOnly": true,
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ODataPathSegment": {
+      "properties": {
+        "SegmentKind": {
+          "readOnly": true,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ODataQueryContext": {
+      "properties": {
+        "ElementClrType": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "ElementType": {
+          "$ref": "#/definitions/IEdmType",
+          "readOnly": true
+        },
+        "Model": {
+          "$ref": "#/definitions/IEdmModel",
+          "readOnly": true
+        },
+        "NavigationSource": {
+          "$ref": "#/definitions/IEdmNavigationSource",
+          "readOnly": true
+        },
+        "Path": {
+          "$ref": "#/definitions/ODataPath",
+          "readOnly": true
+        }
+      },
+      "type": "object"
+    },
+    "ODataQueryOptions[ClassSection]": {
+      "properties": {
+        "Apply": {
+          "$ref": "#/definitions/ApplyQueryOption",
+          "readOnly": true
+        },
+        "Context": {
+          "$ref": "#/definitions/ODataQueryContext",
+          "readOnly": true
+        },
+        "Count": {
+          "$ref": "#/definitions/CountQueryOption",
+          "readOnly": true
+        },
+        "Filter": {
+          "$ref": "#/definitions/FilterQueryOption",
+          "readOnly": true
+        },
+        "IfMatch": {
+          "$ref": "#/definitions/Object",
+          "readOnly": true
+        },
+        "IfNoneMatch": {
+          "$ref": "#/definitions/Object",
+          "readOnly": true
+        },
+        "OrderBy": {
+          "$ref": "#/definitions/OrderByQueryOption",
+          "readOnly": true
+        },
+        "RawValues": {
+          "$ref": "#/definitions/ODataRawQueryOptions",
+          "readOnly": true
+        },
+        "Request": {
+          "$ref": "#/definitions/Object",
+          "readOnly": true
+        },
+        "SelectExpand": {
+          "$ref": "#/definitions/SelectExpandQueryOption",
+          "readOnly": true
+        },
+        "Skip": {
+          "$ref": "#/definitions/SkipQueryOption",
+          "readOnly": true
+        },
+        "Top": {
+          "$ref": "#/definitions/TopQueryOption",
+          "readOnly": true
+        },
+        "Validator": {
+          "$ref": "#/definitions/ODataQueryValidator"
+        }
+      },
+      "type": "object"
+    },
+    "ODataQueryValidator": {
+      "properties": {},
+      "type": "object"
+    },
+    "ODataRawQueryOptions": {
+      "properties": {
+        "Apply": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Count": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "DeltaToken": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Expand": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Filter": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Format": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "OrderBy": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Select": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Skip": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "SkipToken": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Top": {
+          "readOnly": true,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Object": {
+      "properties": {},
+      "type": "object"
+    },
+    "OrderByClause": {
+      "properties": {
+        "Direction": {
+          "enum": [
+            0,
+            1
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "Expression": {
+          "$ref": "#/definitions/SingleValueNode",
+          "readOnly": true
+        },
+        "ItemType": {
+          "$ref": "#/definitions/IEdmTypeReference",
+          "readOnly": true
+        },
+        "RangeVariable": {
+          "$ref": "#/definitions/RangeVariable",
+          "readOnly": true
+        },
+        "ThenBy": {
+          "$ref": "#/definitions/OrderByClause",
+          "readOnly": true
+        }
+      },
+      "type": "object"
+    },
+    "OrderByNode": {
+      "properties": {
+        "Direction": {
+          "enum": [
+            0,
+            1
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "OrderByQueryOption": {
+      "properties": {
+        "Context": {
+          "$ref": "#/definitions/ODataQueryContext",
+          "readOnly": true
+        },
+        "OrderByClause": {
+          "$ref": "#/definitions/OrderByClause",
+          "readOnly": true
+        },
+        "OrderByNodes": {
+          "items": {
+            "$ref": "#/definitions/OrderByNode"
+          },
+          "readOnly": true,
+          "type": "array"
+        },
+        "RawValue": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Validator": {
+          "$ref": "#/definitions/OrderByQueryValidator"
+        }
+      },
+      "type": "object"
+    },
+    "OrderByQueryValidator": {
+      "properties": {},
+      "type": "object"
+    },
+    "PostStudentCourseRegistrationRequest": {
+      "description": "Post Student Course Registration Request",
+      "properties": {
+        "StudentCourseItems": {
+          "description": "Student Courses to Register",
+          "items": {
+            "$ref": "#/definitions/PostStudentCourseRegistrationRequestItem"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "PostStudentCourseRegistrationRequestItem": {
+      "description": "Student Course Registration Item",
+      "properties": {
+        "ClassSectionId": {
+          "description": "Class Section Id",
+          "format": "int32",
+          "type": "integer"
+        },
+        "CrossReferenceCourseId": {
+          "description": "Cross Reference Course Id",
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsAllowedToWaitList": {
+          "description": "Is Allowed to Wait List",
+          "type": "boolean"
+        },
+        "IsAudit": {
+          "description": "Is Audit",
+          "type": "boolean"
+        },
+        "IsCrossReferencedCourse": {
+          "description": "Is Cross-Reference Course",
+          "type": "boolean"
+        },
+        "IsPassFail": {
+          "description": "Is Pass/Fail",
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsRetake": {
+          "description": "Is Retake",
+          "type": "boolean"
+        },
+        "IsRetakeOverride": {
+          "description": "Is Retake Override",
+          "type": "boolean"
+        },
+        "IsSubstituteCourse": {
+          "description": "Is Substitute",
+          "type": "boolean"
+        },
+        "IsWaitlistStudentNotified": {
+          "description": "Is Waitlist Student Notified",
+          "type": "boolean"
+        },
+        "Note": {
+          "description": "Note",
+          "type": "string"
+        },
+        "OverrideRegistrationHold": {
+          "description": "Override Registration Hold",
+          "type": "boolean"
+        },
+        "RequiredCourseId": {
+          "description": "Required Course Id",
+          "format": "int32",
+          "type": "integer"
+        },
+        "RetakeStudentCourseId": {
+          "description": "Retake Student Course Id",
+          "format": "int32",
+          "type": "integer"
+        },
+        "StudentCourseId": {
+          "description": "Student Course",
+          "format": "int32",
+          "type": "integer"
+        },
+        "SubstituteCourseId": {
+          "description": "Substitute Course Id",
+          "format": "int32",
+          "type": "integer"
+        },
+        "TermId": {
+          "description": "Term Id",
+          "format": "int32",
+          "type": "integer"
+        },
+        "UseFeeSchedule": {
+          "description": "Use Fee Schedule",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "PostStudentCourseRegistrationResponse": {
+      "description": "Post Student Course Registration Response",
+      "properties": {
+        "Items": {
+          "description": "Student Course Registration Item Responses",
+          "items": {
+            "$ref": "#/definitions/PostStudentCourseRegistrationResponseItem"
+          },
+          "readOnly": true,
+          "type": "array"
+        },
+        "ValidationMessages": {
+          "items": {
+            "$ref": "#/definitions/ValidationMessage"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "PostStudentCourseRegistrationResponseItem": {
+      "description": "Student Course Registration Response Item",
+      "properties": {
+        "Entity": {
+          "$ref": "#/definitions/StudentCourseEntity"
+        },
+        "RequestItem": {
+          "$ref": "#/definitions/PostStudentCourseRegistrationRequestItem",
+          "description": "The request item"
+        },
+        "ValidationMessages": {
+          "items": {
+            "$ref": "#/definitions/ValidationMessage"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "RangeVariable": {
+      "properties": {
+        "Kind": {
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "Name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "TypeReference": {
+          "$ref": "#/definitions/IEdmTypeReference",
+          "readOnly": true
+        }
+      },
+      "type": "object"
+    },
+    "SearchClassSectionsResponse": {
+      "description": "Response for Class Sections Search",
+      "properties": {
+        "Items": {
+          "description": "Class Section Items",
+          "items": {
+            "$ref": "#/definitions/EntityServiceResponse[ClassSectionEntity]"
+          },
+          "type": "array"
+        },
+        "ValidationMessages": {
+          "items": {
+            "$ref": "#/definitions/ValidationMessage"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "SelectExpandClause": {
+      "properties": {
+        "AllSelected": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "SelectedItems": {
+          "items": {
+            "$ref": "#/definitions/SelectItem"
+          },
+          "readOnly": true,
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "SelectExpandQueryOption": {
+      "properties": {
+        "Context": {
+          "$ref": "#/definitions/ODataQueryContext",
+          "readOnly": true
+        },
+        "LevelsMaxLiteralExpansionDepth": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "RawExpand": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "RawSelect": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "SelectExpandClause": {
+          "$ref": "#/definitions/SelectExpandClause",
+          "readOnly": true
+        },
+        "Validator": {
+          "$ref": "#/definitions/SelectExpandQueryValidator"
+        }
+      },
+      "type": "object"
+    },
+    "SelectExpandQueryValidator": {
+      "properties": {},
+      "type": "object"
+    },
+    "SelectItem": {
+      "properties": {},
+      "type": "object"
+    },
+    "SingleValueNode": {
+      "properties": {
+        "Kind": {
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "TypeReference": {
+          "$ref": "#/definitions/IEdmTypeReference",
+          "readOnly": true
+        }
+      },
+      "type": "object"
+    },
+    "SkipQueryOption": {
+      "properties": {
+        "Context": {
+          "$ref": "#/definitions/ODataQueryContext",
+          "readOnly": true
+        },
+        "RawValue": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Validator": {
+          "$ref": "#/definitions/SkipQueryValidator"
+        },
+        "Value": {
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "SkipQueryValidator": {
+      "properties": {},
+      "type": "object"
+    },
+    "StudentCourseEntity": {
+      "properties": {
+        "AcademicYear": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "AdEnrollRegistrationId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "AdvisedDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "AuditEffectiveDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "BilledDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "ClassSectionId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ClockHours": {
+          "format": "double",
+          "type": "number"
+        },
+        "ClockHoursAttempted": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "ClockHoursEarned": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "CollegeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ConsecutiveMinutesAbsent": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "Cost": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "CourseFeeScheduleId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "CourseId": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "CourseName": {
+          "type": "string"
+        },
+        "CreatedDateTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "CreditHours": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "CreditHoursAttempted": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "CreditHoursEarned": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "CrossReferenceCourseId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "DateReqMet": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "DependentClassSectionId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "DropDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "EndDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "EnrollmentStatusClockHours": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "EnrollmentStatusCreditHours": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "EntityState": {
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "format": "int32",
+          "type": "integer"
+        },
+        "ExpectedDeadlineDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "ExpectedEndDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "ExtendedProperties": {
+          "items": {
+            "$ref": "#/definitions/EntityProperty"
+          },
+          "type": "array"
+        },
+        "FaStudentAyPaymentPeriodId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "GradePoints": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "GradePostedDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "GradeScaleId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "HighSchoolId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "InProgressGrade": {
+          "format": "double",
+          "type": "number"
+        },
+        "Include": {
+          "type": "boolean"
+        },
+        "IsAfterAddDrop": {
+          "type": "boolean"
+        },
+        "IsAuditCourse": {
+          "type": "boolean"
+        },
+        "IsAutoDrop": {
+          "type": "boolean"
+        },
+        "IsCostScheduled": {
+          "type": "boolean"
+        },
+        "IsCourseRefundPolicyUsed": {
+          "type": "boolean"
+        },
+        "IsCrossReferencedCourse": {
+          "type": "boolean"
+        },
+        "IsCrsg": {
+          "type": "boolean"
+        },
+        "IsExtended": {
+          "type": "boolean"
+        },
+        "IsExtensionBilled": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "IsIncludedInGpaCalc": {
+          "type": "boolean"
+        },
+        "IsIncompleteGradeReplaced": {
+          "type": "boolean"
+        },
+        "IsOnlyRateScheduleUsed": {
+          "type": "boolean"
+        },
+        "IsPassFail": {
+          "type": "boolean"
+        },
+        "IsStudentDegreePathwayCourse": {
+          "type": "boolean"
+        },
+        "IsSubstitute": {
+          "type": "boolean"
+        },
+        "IsTransferCredit": {
+          "type": "boolean"
+        },
+        "LastModifiedDateTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "LastModifiedUserId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Lda": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "LetterGrade": {
+          "type": "string"
+        },
+        "LmsExtractStatus": {
+          "type": "string"
+        },
+        "MakeUpMinutes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "MidTermGradeNote": {
+          "type": "string"
+        },
+        "MidTermGradePostedDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "MidTermLetterGrade": {
+          "type": "string"
+        },
+        "MidTermNumericGrade": {
+          "format": "double",
+          "type": "number"
+        },
+        "MinutesAbsent": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "MinutesAttended": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ModFlag": {
+          "type": "string"
+        },
+        "Note": {
+          "type": "string"
+        },
+        "NumericGrade": {
+          "format": "double",
+          "type": "number"
+        },
+        "OriginalState": {
+          "format": "byte",
+          "type": "string"
+        },
+        "OutsideCourseWorkHours": {
+          "format": "decimal",
+          "type": "number"
+        },
+        "OverrideCourseProgression": {
+          "type": "string"
+        },
+        "PayStatus": {
+          "type": "string"
+        },
+        "PreviousStatus": {
+          "type": "string"
+        },
+        "QualityPoints": {
+          "format": "double",
+          "type": "number"
+        },
+        "RequiredCourseId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "RetakeFeeWaived": {
+          "type": "string"
+        },
+        "RetakeFlag": {
+          "type": "string"
+        },
+        "RetakeOverride": {
+          "type": "boolean"
+        },
+        "RetakeTiv2CredEarnValue": {
+          "format": "double",
+          "type": "number"
+        },
+        "RetakeTiv2CredEarnZeroed": {
+          "type": "boolean"
+        },
+        "RevenueReferenceNumber": {
+          "type": "string"
+        },
+        "RosterFlag": {
+          "type": "string"
+        },
+        "RowVersion": {
+          "format": "byte",
+          "type": "string"
+        },
+        "SecureState": {
+          "format": "byte",
+          "type": "string"
+        },
+        "Speed": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "StartDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "StudentEnrollmentPeriodId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "StudentEnrollmentPeriodIdList": {
+          "items": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "StudentId": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "StudentTransferCreditId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "SubstituteCourseId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "SupplementaryStatus": {
+          "type": "string"
+        },
+        "TermId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "TranscripNote": {
+          "type": "string"
+        },
+        "TranscriptNote": {
+          "type": "string"
+        },
+        "TransferTypeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "TransferredCourseCode": {
+          "type": "string"
+        },
+        "TransferredCourseDescrip": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Id",
+        "CourseId",
+        "StudentId"
+      ],
+      "type": "object"
+    },
+    "TopQueryOption": {
+      "properties": {
+        "Context": {
+          "$ref": "#/definitions/ODataQueryContext",
+          "readOnly": true
+        },
+        "RawValue": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "Validator": {
+          "$ref": "#/definitions/TopQueryValidator"
+        },
+        "Value": {
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "TopQueryValidator": {
+      "properties": {},
+      "type": "object"
+    },
+    "TransformationNode": {
+      "properties": {
+        "Kind": {
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "format": "int32",
+          "readOnly": true,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "ValidateAllowedRetakesRequest": {
+      "description": "Validate Allowed Retakes Request",
+      "properties": {
+        "ClassSectionIdList": {
+          "description": "Class Section Id List",
+          "items": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ValidateAllowedRetakesResponse": {
+      "properties": {
+        "Items": {
+          "items": {
+            "$ref": "#/definitions/ValidateAllowedRetakesResponseItem"
+          },
+          "type": "array"
+        },
+        "ValidationMessages": {
+          "items": {
+            "$ref": "#/definitions/ValidationMessage"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ValidateAllowedRetakesResponseItem": {
+      "properties": {
+        "ClassSectionId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "MaxAllowedRetakes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "NumberOfTimesTaken": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "ValidationMessage": {
+      "properties": {
+        "Message": {
+          "type": "string"
+        },
+        "MessageType": {
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "host": "sisclientweb-900002.campusnexus.cloud",
+  "info": {
+    "description": "CampusNexus Student v20.0 Query API (Integration-CourseRegistration)",
+    "title": "Integration-CourseRegistration",
+    "version": "integration-courseregistration"
+  },
+  "parameters": {},
+  "paths": {
+    "/api/course-registration/class-sections": {
+      "get": {
+        "consumes": [],
+        "deprecated": false,
+        "operationId": "GetClassSections",
+        "parameters": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of Class Section Entity Service Responses",
+            "schema": {
+              "$ref": "#/definitions/SearchClassSectionsResponse"
+            }
+          },
+          "403": {
+            "description": "Failed Authorization"
+          }
+        },
+        "summary": "Search Class Section",
+        "tags": [
+          "CourseRegistration"
+        ]
+      }
+    },
+    "/api/course-registration/class-sections/{classSectionId}": {
+      "get": {
+        "consumes": [],
+        "deprecated": false,
+        "operationId": "GetClassSectionByClasssectionid",
+        "parameters": [
+          {
+            "description": "Class Section Id",
+            "format": "int32",
+            "in": "path",
+            "name": "classSectionId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Class Section",
+            "schema": {
+              "$ref": "#/definitions/EntityServiceResponse[ClassSectionEntity]"
+            }
+          },
+          "403": {
+            "description": "Failed Authorization"
+          }
+        },
+        "summary": "Get Class Section",
+        "tags": [
+          "CourseRegistration"
+        ]
+      }
+    },
+    "/api/course-registration/class-sections/{classSectionId}/available-seats": {
+      "get": {
+        "consumes": [],
+        "deprecated": false,
+        "operationId": "GetAvailableSeatsByClasssectionid",
+        "parameters": [
+          {
+            "description": "Class section Id",
+            "format": "int32",
+            "in": "path",
+            "name": "classSectionId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Get Available Seats Response",
+            "schema": {
+              "$ref": "#/definitions/GetAvailableSeatsResponse"
+            }
+          },
+          "403": {
+            "description": "Failed Authorization"
+          }
+        },
+        "summary": "Calculates and returns the available seats for a class section",
+        "tags": [
+          "CourseRegistration"
+        ]
+      }
+    },
+    "/api/course-registration/students/{studentId}/student-enrollment-periods/{studentEnrollmentPeriodId}/student-courses": {
+      "get": {
+        "consumes": [],
+        "deprecated": false,
+        "operationId": "CourseRegistration_GetCoursesForEnrollmentByStudentidAndStudentenrollmentperiodid",
+        "parameters": [
+          {
+            "description": "Student Id",
+            "format": "int32",
+            "in": "path",
+            "name": "studentId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Student Enrollment Period Id",
+            "format": "int32",
+            "in": "path",
+            "name": "studentEnrollmentPeriodId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Student Course List Response",
+            "schema": {
+              "$ref": "#/definitions/GetCoursesForEnrollmentResponse"
+            }
+          },
+          "403": {
+            "description": "Failed Authorization"
+          }
+        },
+        "summary": "Get StudentCourses for an Enrollment Period",
+        "tags": [
+          "CourseRegistration"
+        ]
+      }
+    },
+    "/api/course-registration/students/{studentId}/student-enrollment-periods/{studentEnrollmentPeriodId}/student-courses/register": {
+      "post": {
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "deprecated": false,
+        "operationId": "CourseRegistration_PostStudentCourseRegistrationByStudentidAndStudentenrollmentperiodid",
+        "parameters": [
+          {
+            "description": "Student Id",
+            "format": "int32",
+            "in": "path",
+            "name": "studentId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Student Enrollment Period Id",
+            "format": "int32",
+            "in": "path",
+            "name": "studentEnrollmentPeriodId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "PostStudentCourseRegistrationRequest",
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PostStudentCourseRegistrationRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Post Student Course Registrations Response",
+            "schema": {
+              "$ref": "#/definitions/PostStudentCourseRegistrationResponse"
+            }
+          },
+          "403": {
+            "description": "Failed Authorization"
+          }
+        },
+        "summary": "Post student course registrations",
+        "tags": [
+          "CourseRegistration"
+        ]
+      }
+    },
+    "/api/course-registration/students/{studentId}/student-enrollment-periods/{studentEnrollmentPeriodId}/student-courses/validate-allowed-retakes": {
+      "post": {
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "deprecated": false,
+        "operationId": "CourseRegistration_ValidateAllowedRetakesByStudentidAndStudentenrollmentperiodid",
+        "parameters": [
+          {
+            "description": "Student Id",
+            "format": "int32",
+            "in": "path",
+            "name": "studentId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Student Enrollment Period Id",
+            "format": "int32",
+            "in": "path",
+            "name": "studentEnrollmentPeriodId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "ValidateAllowedRetakesRequest",
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ValidateAllowedRetakesRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Validate Allowed Retakes Response",
+            "schema": {
+              "$ref": "#/definitions/ValidateAllowedRetakesResponse"
+            }
+          },
+          "403": {
+            "description": "Failed Authorization"
+          }
+        },
+        "summary": "Validate allowed retakes for student enrollment period",
+        "tags": [
+          "CourseRegistration"
+        ]
+      }
+    }
+  },
+  "produces": [],
+  "responses": {},
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "security": [
+    {
+      "oauth2_auth": []
+    }
+  ],
+  "securityDefinitions": {
+    "oauth2_auth": {
+      "authorizationUrl": "https://login.windows.net/common/oauth2/authorize",
+      "flow": "accessCode",
+      "scopes": {},
+      "tokenUrl": "https://login.windows.net/common/oauth2/authorize",
+      "type": "oauth2"
+    }
+  },
+  "swagger": "2.0",
+  "tags": []
+}
