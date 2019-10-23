@@ -12,7 +12,7 @@
   Once Microsoft flow and its basics are understood, one can start a flow from scratch or import a flow package and start from a certain step to extend the flow.
   Steps to follow to Import Flow templates
   1. Download the flow packages from any source.  
-  2. Navigate to <B>Flow.microsoft.com<B>  
+  2. Navigate to <B>Flow.microsoft.com</B>  
   3. Select a Desired Environment at the top right corner. 
   4. Click on <B>Import</B> under <B> My Flows </B>
   5. Upload the Downloaded package.
@@ -24,10 +24,10 @@
 
 ### CMC Flow Templates
 #### Pre-requisites 
-1.  Basic Understanding on Azure Service Bus.
-2   Azure Service Bus name space.
-3.  Azure Service Bus Queue.
-4.  Azure Service Bus Topic.
+  1. Basic Understanding on Azure Service Bus.
+  2. Azure Service Bus name space.
+  3. Azure Service Bus Queue.
+  4. Azure Service Bus Topic.
 
   CMC flow templates demonstrates how we can use Azure service Bus Queues and Topics in flows to integrate with Campus nexus Student. Campus Nexus student adds the event data to a Azure service Bus Queue/topic.
   
@@ -37,7 +37,8 @@
     3. If topics is selected then a desired Subscription needs to be selected.
     
   #### Triggers
-    In CMC Flow templates, Flow is triggered when one or more message is received in a Azure Service Queue or Topic from Campus Nexus Student.
+    In CMC Flow templates, Flow is triggered when one or 
+    more message is received in a Azure Service Queue or Topic from Campus Nexus Student.
   #### Actions
     1.  Once the flow is triggered, the message is parsed as Json.
     2.  Parsed Json is used to identify which entity is being processed.
