@@ -60,6 +60,9 @@ If we are updated the API definition.
 1.	 We need to down load the custom connector from a QA environment in test tenant. Using the paconn download command.
 2.	Replace the apiDefinition.swagger.json  from the deployable folder with the new file in the downloaded folder.
 3.	Use the following command to update the swagger definition for a given customer connector.
-	 paconn update --api-prop [Path to apiProperties.json] --api-def [Path to apiDefinition.swagger.json] --icon [Path to icon.png] --secret 
-		--secret aregument is optional depending on the authentication model being used.
+	
+	<B> paconn update --api-prop [Path to apiProperties.json] --api-def [Path to apiDefinition.swagger.json] --icon [Path to 
+	icon.png] --secret </B>
+	
+	--secret aregument is optional depending on the authentication model being used.
 		During the update process as well, we can choose the environment in a given tenant and choose the organization in a given environment. As we saw in the download section.
